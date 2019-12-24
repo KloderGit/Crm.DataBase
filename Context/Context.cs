@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace crm.service.database
 {
@@ -6,13 +7,11 @@ namespace crm.service.database
     {
         public DbSet<EventLink> Events { get; set; }
 
-        public CrmDataBaseContext()
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var options = optionsBuilder
+                            .UseNpgsql("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=password")
+                            .Options;
         }
-
-        public CrmDataBaseContext(DbContextOptions<CrmDataBaseContext> options) : base(options)
-        {
-        }
-
     }
 }
