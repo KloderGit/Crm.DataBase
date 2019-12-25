@@ -2,16 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using crm.service.database;
 
 namespace Context.Migrations
 {
-    [DbContext(typeof(CrmDataBaseContext))]
-    partial class CrmDataBaseContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(DevelopContext))]
+    [Migration("20191225101013_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

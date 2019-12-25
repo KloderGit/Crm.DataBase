@@ -10,5 +10,6 @@
         public string Type { get; set; }
         public string Department { get; set; }
         public string PartTime { get; set; }
+        public string Comment { get; set; }
     }
 }

@@ -9,9 +9,9 @@ using crm.service.database;
 
 namespace Context.Migrations
 {
-    [DbContext(typeof(CrmDataBaseContext))]
-    [Migration("20191224141553_Init")]
-    partial class Init
+    [DbContext(typeof(DevelopContext))]
+    [Migration("20191225101139_AddComment")]
+    partial class AddComment
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,6 +25,8 @@ namespace Context.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Comment");
 
                     b.Property<int>("CrmKey");
 
